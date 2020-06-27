@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 # Here I have shown the very basic construct of a Artificial Neural Network (ANN). ANN has inputs values/input layers which
 # interacts with hidden layers (can be multiple) through some mathematical operation, gets adjusted according to some activation
 # function and the procedure is repeated till the errors in the receieved output are are minimized w.r.t the expected output 
@@ -11,16 +8,8 @@
 # Generally we have 3 Activation Functions: Sigmoid, Relu and Tanh. Here I have taken sigmoid function. Also, I have defined 
 # a derivative function which will be used while calculating the adjustments.  
 
-
-# In[2]:
-
-
 # import the required: We will manupulate data in arrays
 import numpy as np
-
-
-# In[3]:
-
 
 # define sigmoid and derivative functions
 def sigmoid(y):
@@ -28,10 +17,6 @@ def sigmoid(y):
 
 def sigmoid_derivative(x):
     return x*(1-x)
-
-
-# In[4]:
-
 
 # Take a random input array of size say (4,3)
 training_ip = np.array([[0,0,1],
@@ -42,19 +27,11 @@ training_ip = np.array([[0,0,1],
 # Take an output array (we expect the achieve this output)
 training_op = np.array([[0,1,1,0]]).T # Transpose: to match these values row by row with input values
 
-
-# In[5]:
-
-
 # We need some weights in order to have a random number to me multiplied with the input layer to get an output
 # We generate some random numbers, with some mathematical changes. These mathematical changes can be anything
 
 synaptic_weights = 2*np.random.random((3,1))-1
 synaptic_weights
-
-
-# In[6]:
-
 
 # Build the algorithmic model
 lsoutputs, lserrors=[],[] #to store outputs and errors, just to compare number of outputs and number of errors: should be equal
@@ -72,22 +49,10 @@ for iteration in range(50000):
     # finaly update the synaptic_weights for next iteration
     synaptic_weights += np.dot(input_layer.T, adjustment)
 
-
-# In[7]:
-
-
 print(len(lsoutputs), len(lserrors)) # both are same
-
-
-# In[8]:
-
 
 # Let us try to plot the progress of loss and accuracy so as to check the flow
 import matplotlib.pyplot as plt
-
-
-# In[9]:
-
 
 # Errors
 plt.plot(range(50000),lserrors,label='Errors')
@@ -98,19 +63,11 @@ plt.title("Error Change With Each Iteration")
 plt.legend()
 plt.show()
 
-
-# In[10]:
-
-
 # Output
 plt.plot(range(50000),lsoutputs,label="Outputs")
 plt.title("Output Values change with Each Iteration")
 plt.legend()
 plt.show()
-
-
-# In[11]:
-
 
 # Both
 plt.plot(range(50000),lserrors,label='Errors')
@@ -119,26 +76,13 @@ plt.title("Errors and Outputs Changes with Iterations")
 plt.legend()
 plt.show()
 
-
-# In[12]:
-
-
 # Expected Output
 training_op
 
-
-# In[13]:
-
-
 # Last received Output
 output
-
-
-# In[14]:
-
 
 # If we compare last received output with the Expected output, we see very less difference and hence we can say that with
 # each iteration, the neural network adjusted the input so as to get the output with minimum error w.r.t the expected output.
 # We cane test with number of iterations that the more the iteration, the more algorithm tends to improve with the accuracy
 # by minimizing the errors.
-
