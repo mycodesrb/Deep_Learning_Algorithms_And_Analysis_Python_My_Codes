@@ -3,14 +3,14 @@
 
 # Here, I have used the mnist dataset from Keras library. We will load this data, split in train and test and process the data
 # in order to make it in a proper format to input to the ANN model. Then we will train the model and we will check the loss
-# and accuracy of the ANN model. Post that we will try to predict whether the model predict the data.
+# and accuracy of the ANN model. Post that we will try to predict whether the model predicts the data correctly.
 
-# About in keras: is a high-level neural network API focused on user friendliness, fast prototyping, modularity and
+# About keras: Keras is a high-level neural network API focused on user friendliness, fast prototyping, modularity and
 # extensibility. 
 
 # PACKAGE CONTENTS boston_housing, cifar, cifar10, cifar100, fashion_mnist, imdb, mnist, reuters out of which we used mnist
 # mnist dataset: MNIST contains 70,000 images of handwritten digits: 60,000 for training and 10,000 for testing. The images 
-# are grayscale, 28x28 pixels, and centered to reduce preprocessing and get started quicker. 
+# are grayscale, 28x28 pixels, and centered to reduce preprocessing and get started quicker.  
 
 # import required packages
 from keras.datasets import mnist
